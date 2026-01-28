@@ -1,5 +1,6 @@
 import React from 'react';
 import mkceImage from '../image/MKCEAerialView.jpg';
+import brochureImg from '../image/brochure.jpg';
 
 export default function Hero() {
     return (
@@ -60,11 +61,14 @@ export default function Hero() {
                 >
                     REGISTER NOW
                 </button>
-                <button
+                <a
+                    href={brochureImg}
+                    download="Hackfest_2K26_Brochure.jpg"
                     className="btn-hero"
+                    style={{ textDecoration: 'none', display: 'inline-block' }}
                 >
                     DOWNLOAD BROCHURE
-                </button>
+                </a>
             </div>
 
             <style>{`

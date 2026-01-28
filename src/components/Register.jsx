@@ -1,113 +1,95 @@
-import React, { useState } from 'react';
+import React from 'react';
+import registerQr from '../image/register_qr.png';
 
 export default function Register() {
-    const [formData, setFormData] = useState({
-        team_name: '',
-        college: '',
-        leader_name: '',
-        email: '',
-        phone: '',
-        member2: '',
-        member3: '',
-        member4: ''
-    });
-
-    const [status, setStatus] = useState('');
-
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setStatus('Submitting...');
-
-        // Demo mode: Form submission without backend
-        // In production, connect this to your registration API
-        setTimeout(() => {
-            setStatus('Thank you for your interest! 🎉');
-            alert('Thank you for your interest in HACKFEST 2K26!\nRegistration will open soon. Stay tuned!');
-            setFormData({
-                team_name: '', college: '', leader_name: '',
-                email: '', phone: '', member2: '', member3: '', member4: ''
-            });
-        }, 500);
-    };
-
-    const inputStyle = {
-        width: '100%',
-        padding: '12px',
-        margin: '8px 0',
-        background: 'rgba(255, 255, 255, 0.1)',
-        border: '1px solid rgba(255, 255, 255, 0.2)',
-        borderRadius: '4px',
-        color: '#fff',
-        fontSize: '1rem',
-        outline: 'none'
-    };
-
     return (
-        <section id="register" className="container" style={{ marginBottom: '100px' }}>
-            <h2 className="glow-text" style={{ textAlign: 'center', marginBottom: '50px', fontSize: '2.5rem' }}>Team Registration</h2>
+        <section id="register" style={{ background: '#fff', padding: '100px 0', width: '100%' }}>
+            <div className="container">
+                <h2 style={{ textAlign: 'center', marginBottom: '50px', fontSize: '2.5rem', color: '#000', fontWeight: 'bold', textTransform: 'uppercase' }}>Team Registration</h2>
 
-            <div className="glass-card" style={{ maxWidth: '800px', margin: '0 auto' }}>
-                <form onSubmit={handleSubmit} className="registration-form">
+                <div className="register-content" style={{ maxWidth: '1000px', margin: '0 auto' }}>
 
-                    <div style={{ gridColumn: 'span 2' }}>
-                        <h3 style={{ borderBottom: '1px solid #444', paddingBottom: '10px', marginBottom: '20px' }}>Team Details</h3>
-                    </div>
+                    {/* Grid Layout */}
+                    <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                        gap: '50px',
+                        alignItems: 'center'
+                    }}>
 
-                    <div>
-                        <label>Team Name *</label>
-                        <input type="text" name="team_name" required style={inputStyle} value={formData.team_name} onChange={handleChange} />
-                    </div>
-                    <div>
-                        <label>College Name *</label>
-                        <input type="text" name="college" required style={inputStyle} value={formData.college} onChange={handleChange} />
-                    </div>
+                        {/* Left Column: Text */}
+                        <div style={{ textAlign: 'left' }}>
+                            <h3 style={{ marginBottom: '20px', color: '#000', fontSize: '2rem', fontWeight: '800' }}>
+                                Ready to Participate?
+                            </h3>
+                            <p style={{ color: '#555', fontSize: '1.2rem', lineHeight: '1.8', marginBottom: '30px' }}>
+                                Join us for HACKFEST 2K26 and showcase your innovation.
+                                Simply scan the QR code or click it to fill out the registration form.
+                            </p>
 
-                    <div style={{ gridColumn: 'span 2', marginTop: '20px' }}>
-                        <h3 style={{ borderBottom: '1px solid #444', paddingBottom: '10px', marginBottom: '20px' }}>Team Leader</h3>
-                    </div>
+                            <div style={{
+                                background: '#f9f9f9',
+                                borderLeft: '4px solid #D32F2F',
+                                padding: '15px 20px',
+                                borderRadius: '0 8px 8px 0'
+                            }}>
+                                <p style={{ margin: 0, color: '#333', fontWeight: '500' }}>
+                                    <span style={{ color: '#D32F2F', fontWeight: 'bold', display: 'block', marginBottom: '5px' }}>NOTE:</span>
+                                    Slots are filling up fast! Register your team before the deadline.
+                                </p>
+                            </div>
+                        </div>
 
-                    <div>
-                        <label>Leader Name *</label>
-                        <input type="text" name="leader_name" required style={inputStyle} value={formData.leader_name} onChange={handleChange} />
+                        {/* Right Column: QR Code */}
+                        <div style={{ textAlign: 'center' }}>
+                            <div style={{
+                                background: '#fff',
+                                padding: '20px',
+                                borderRadius: '20px',
+                                display: 'inline-block',
+                                boxShadow: '0 20px 50px rgba(0, 0, 0, 0.1)',
+                                cursor: 'pointer',
+                                transition: 'all 0.3s ease',
+                                border: '1px solid #eee'
+                            }}
+                                className="qr-card">
+                                <a
+                                    href="https://docs.google.com/forms/d/e/1FAIpQLSfx5y8ipMxMeMXmI_hGmv1NmFDeql8JKpo4MXdoeeWyXqYdMA/viewform"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{ display: 'block' }}
+                                >
+                                    <img
+                                        src={registerQr}
+                                        alt="Registration QR Code"
+                                        style={{ width: '280px', height: '280px', display: 'block', borderRadius: '10px' }}
+                                    />
+                                </a>
+                                <p style={{ marginTop: '15px', color: '#888', fontSize: '0.9rem', fontWeight: '600' }}>
+                                    Click to Register
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <label>Phone Number *</label>
-                        <input type="tel" name="phone" required style={inputStyle} value={formData.phone} onChange={handleChange} />
-                    </div>
-                    <div style={{ gridColumn: 'span 2' }}>
-                        <label>Email *</label>
-                        <input type="email" name="email" required style={inputStyle} value={formData.email} onChange={handleChange} />
-                    </div>
+                </div>
 
-                    <div style={{ gridColumn: 'span 2', marginTop: '20px' }}>
-                        <h3 style={{ borderBottom: '1px solid #444', paddingBottom: '10px', marginBottom: '20px' }}>Team Members</h3>
-                    </div>
-
-                    <div style={{ gridColumn: 'span 2' }}>
-                        <label>Member 2 Name</label>
-                        <input type="text" name="member2" style={inputStyle} value={formData.member2} onChange={handleChange} />
-                    </div>
-                    <div style={{ gridColumn: 'span 2' }}>
-                        <label>Member 3 Name</label>
-                        <input type="text" name="member3" style={inputStyle} value={formData.member3} onChange={handleChange} />
-                    </div>
-                    <div style={{ gridColumn: 'span 2' }}>
-                        <label>Member 4 Name</label>
-                        <input type="text" name="member4" style={inputStyle} value={formData.member4} onChange={handleChange} />
-                    </div>
-
-                    <div style={{ gridColumn: 'span 2', marginTop: '20px', textAlign: 'center' }}>
-                        <button type="submit" className="btn btn-primary" style={{ width: '100%', fontSize: '1.2rem' }}>
-                            Submit Registration
-                        </button>
-                        {status && <p style={{ marginTop: '15px', color: status.includes('Success') ? '#4caf50' : '#f44336' }}>{status}</p>}
-                    </div>
-
-                </form>
+                <style>{`
+                    .qr-card:hover {
+                        transform: translateY(-10px);
+                        box-shadow: 0 30px 60px rgba(211, 47, 47, 0.15) !important;
+                        border-color: #D32F2F !important;
+                    }
+                    @media (max-width: 768px) {
+                        .register-content > div {
+                            grid-template-columns: 1fr !important;
+                            text-align: center !important;
+                            gap: 40px !important;
+                        }
+                        .register-content div[style*="textAlign: left"] {
+                            text-align: center !important;
+                        }
+                    }
+                `}</style>
             </div>
         </section>
     );

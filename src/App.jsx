@@ -6,6 +6,7 @@ import Prizes from "./components/Prizes";
 import Gallery from "./components/Gallery";
 import Sponsors from "./components/Sponsors";
 import StaffCoordinator from "./components/StaffCoordinator";
+import Register from "./components/Register";
 import Contact from "./components/Contact";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Prizes />
             <Sponsors />
             <StaffCoordinator />
+            <Register />
             <Contact />
         </>
     );

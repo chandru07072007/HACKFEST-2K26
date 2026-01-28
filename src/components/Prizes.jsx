@@ -2,7 +2,7 @@ import React from 'react';
 
 const prizes = [
     {
-        position: "SECOND PRIZE",
+        position: "RUNNER UP",
         amount: "₹25,000",
         icon: "🥈",
         color: "#00D9FF",
@@ -10,7 +10,7 @@ const prizes = [
         rank: 2
     },
     {
-        position: "FIRST PRIZE",
+        position: "CHAMPION",
         amount: "₹50,000",
         icon: "🥇",
         color: "#FFD700",
@@ -18,7 +18,7 @@ const prizes = [
         rank: 1
     },
     {
-        position: "THIRD PRIZE",
+        position: "2ND RUNNER UP",
         amount: "₹15,000",
         icon: "🥉",
         color: "#FF1744",
@@ -70,7 +70,7 @@ export default function Prizes() {
                 </h2>
 
                 {/* Podium Layout */}
-                <div style={{
+                <div className="prizes-grid" style={{
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'flex-end',
@@ -102,7 +102,7 @@ export default function Prizes() {
                                 marginTop: prize.rank === 1 ? '0' : '100px',
                                 transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
                                 backdropFilter: 'blur(20px)',
-                                transform: prize.rank === 1 ? 'scale(1.1)' : 'scale(1)'
+                                transform: prize.rank === 1 ? 'scale(1.1) translateY(-40px)' : 'scale(1)'
                             }}
                         >
 
@@ -233,14 +233,27 @@ export default function Prizes() {
                         margin-bottom: 60px !important;
                     }
 
+                    .prizes-grid {
+                        flex-direction: column;
+                        align-items: center !important;
+                    }
+
                     .prize-card {
-                        margin-top: 60px !important;
-                        min-width: 260px !important;
+                        margin-top: 20px !important;
+                        min-width: 280px !important;
                         transform: scale(1) !important;
+                        width: 100%;
                     }
 
                     .prize-card[data-rank="1"] {
-                        transform: scale(1.05) !important;
+                        order: 1;
+                        margin-bottom: 20px !important;
+                    }
+                    .prize-card[data-rank="2"] {
+                        order: 2;
+                    }
+                    .prize-card[data-rank="3"] {
+                        order: 3;
                     }
                 }
             `}</style>

@@ -54,7 +54,7 @@ export default function About() {
                             color: '#000',
                             marginTop: '30px'
                         }}>
-                            Prize Pool of <span style={{ color: '#D32F2F', fontWeight: '700' }}>₹ 90,000+</span> .
+                            Prize Pool of <span style={{ color: '#D32F2F', fontWeight: '700' }}>₹ 1,00,000+</span> .
                         </p>
                     </div>
 
