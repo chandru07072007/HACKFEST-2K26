@@ -18,35 +18,19 @@ export default function Register() {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         setStatus('Submitting...');
 
-        try {
-            const response = await fetch('http://localhost:5000/register', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
+        // Simulate form submission
+        setTimeout(() => {
+            setStatus('Registration Successful! 🎉');
+            alert('Registration Successful! See you at HACKFEST 2K26!');
+            setFormData({
+                team_name: '', college: '', leader_name: '',
+                email: '', phone: '', member2: '', member3: '', member4: ''
             });
-
-            const data = await response.json();
-
-            if (response.ok) {
-                setStatus('Registration Successful! 🎉');
-                alert('Registration Successful! See you at HACKFEST 2K26!');
-                setFormData({
-                    team_name: '', college: '', leader_name: '',
-                    email: '', phone: '', member2: '', member3: '', member4: ''
-                });
-            } else {
-                setStatus(`Error: ${data.message || 'Registration failed'}`);
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            setStatus('Error connecting to server. Is the backend running?');
-        }
+        }, 500);
     };
 
     const inputStyle = {
