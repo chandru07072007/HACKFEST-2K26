@@ -5,8 +5,8 @@ import Themes from "./components/Themes";
 import Prizes from "./components/Prizes";
 import Gallery from "./components/Gallery";
 import Sponsors from "./components/Sponsors";
-import Register from "./components/Register";
-import Footer from "./components/Footer";
+import StaffCoordinator from "./components/StaffCoordinator";
+import Contact from "./components/Contact";
 
 function App() {
     return (
@@ -18,10 +18,13 @@ function App() {
             <Themes />
             <Prizes />
             <Sponsors />
-            <Register />
-            <Footer />
+            <StaffCoordinator />
+            <Contact />
         </>
     );
 }
 
 export default App;
+
+
+

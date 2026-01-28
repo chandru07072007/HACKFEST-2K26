@@ -46,7 +46,7 @@ export default function Navbar() {
           { label: 'Themes', id: 'themes' },
           { label: 'Timeline', id: 'timeline' },
           { label: 'Prizes', id: 'prizes' },
-          { label: 'Contact', id: 'footer' }
+          { label: 'Contact', id: 'contact' }
         ].map((item) => (
           <li key={item.label} style={{ height: '100%' }}>
             <button
