@@ -29,13 +29,14 @@ export default function Hero() {
             }}></div>
 
             <h1 style={{
-                fontSize: 'clamp(4rem, 10vw, 8rem)',
+                fontSize: 'clamp(2.5rem, 8vw, 6rem)',
                 fontWeight: '900',
                 letterSpacing: '5px',
                 margin: '0',
-                lineHeight: '1',
+                lineHeight: '1.1',
                 textTransform: 'uppercase',
-                fontFamily: 'sans-serif'
+                fontFamily: 'sans-serif',
+                padding: '0 20px'
             }}>
                 HACKFEST 2K26
             </h1>
@@ -46,12 +47,13 @@ export default function Hero() {
                 marginBottom: '40px',
                 fontWeight: '300',
                 color: '#f0f0f0',
-                letterSpacing: '1px'
+                letterSpacing: '1px',
+                padding: '0 20px'
             }}>
                 36-hr Hackathon in Karur | February 20 - 21, 2026
             </p>
 
-            <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', justifyContent: 'center' }}>
+            <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', justifyContent: 'center', padding: '0 20px' }}>
                 <button
                     className="btn-hero"
                     onClick={() => document.getElementById('register').scrollIntoView({ behavior: 'smooth' })}
@@ -81,6 +83,14 @@ export default function Hero() {
         .btn-hero:hover {
           background: #fff;
           color: #000;
+        }
+        @media (max-width: 768px) {
+          .btn-hero {
+            padding: 12px 25px;
+            font-size: 0.9rem;
+            width: 100%;
+            max-width: 300px;
+          }
         }
       `}</style>
         </section>

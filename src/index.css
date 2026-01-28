@@ -6,8 +6,10 @@
   --bg-tertiary: #24243e;
   --text-primary: #ffffff;
   --text-secondary: #e0e0e0;
-  --accent-neon: #ccff00; /* Neon yellow */
-  --accent-glow: #bd00ff; /* Purple glow */
+  --accent-neon: #ccff00;
+  /* Neon yellow */
+  --accent-glow: #bd00ff;
+  /* Purple glow */
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.1);
 }
@@ -26,15 +28,29 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 @keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--text-primary);
   margin-bottom: 1rem;
   text-transform: uppercase;
@@ -118,14 +134,53 @@ section {
   padding: 80px 0;
 }
 
+.registration-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--bg-primary);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--accent-glow);
   border-radius: 5px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  section {
+    padding: 60px 0;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .registration-form {
+    grid-template-columns: 1fr;
+  }
+
+  .registration-form>div {
+    grid-column: span 1 !important;
+  }
 }

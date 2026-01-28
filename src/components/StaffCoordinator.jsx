@@ -40,10 +40,10 @@ export default function StaffCoordinator() {
                 top: '50%',
                 left: '50%',
                 transform: 'translate(-50%, -50%)',
-                fontSize: '10rem',
+                fontSize: 'clamp(4rem, 15vw, 10rem)',
                 fontWeight: '900',
                 color: 'rgba(255, 255, 255, 0.03)',
-                letterSpacing: '20px',
+                letterSpacing: 'clamp(5px, 2vw, 20px)',
                 whiteSpace: 'nowrap',
                 zIndex: 0,
                 userSelect: 'none',
@@ -55,7 +55,7 @@ export default function StaffCoordinator() {
             <div className="container" style={{ position: 'relative', zIndex: 1 }}>
                 {/* Title */}
                 <h2 style={{
-                    fontSize: '4rem',
+                    fontSize: 'clamp(2.5rem, 5vw, 4rem)',
                     textAlign: 'center',
                     marginBottom: '80px',
                     fontWeight: '900',
@@ -69,7 +69,7 @@ export default function StaffCoordinator() {
                 {/* Coordinators Grid */}
                 <div style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
                     gap: '40px',
                     maxWidth: '1200px',
                     margin: '0 auto'

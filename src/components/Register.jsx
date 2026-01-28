@@ -51,7 +51,7 @@ export default function Register() {
             <h2 className="glow-text" style={{ textAlign: 'center', marginBottom: '50px', fontSize: '2.5rem' }}>Team Registration</h2>
 
             <div className="glass-card" style={{ maxWidth: '800px', margin: '0 auto' }}>
-                <form onSubmit={handleSubmit} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+                <form onSubmit={handleSubmit} className="registration-form">
 
                     <div style={{ gridColumn: 'span 2' }}>
                         <h3 style={{ borderBottom: '1px solid #444', paddingBottom: '10px', marginBottom: '20px' }}>Team Details</h3>
