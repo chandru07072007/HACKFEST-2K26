@@ -22,7 +22,15 @@ A modern React website for the HACKFEST 2K26 hackathon at MKCE, Karur.
    ```bash
    npm run dev
    ```
-   The site will be available at `http://localhost:5173`.
+
+4. Build for production:
+   ```bash
+   npm run build
+   ```
+
+## Deployment
+
+This project is configured for deployment on Vercel. Simply connect your GitHub repository to Vercel for automatic deployments.
 
 ## Features
 

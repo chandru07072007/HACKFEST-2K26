@@ -22,10 +22,11 @@ export default function Register() {
         e.preventDefault();
         setStatus('Submitting...');
 
-        // Simulate form submission
+        // Demo mode: Form submission without backend
+        // In production, connect this to your registration API
         setTimeout(() => {
-            setStatus('Registration Successful! 🎉');
-            alert('Registration Successful! See you at HACKFEST 2K26!');
+            setStatus('Thank you for your interest! 🎉');
+            alert('Thank you for your interest in HACKFEST 2K26!\nRegistration will open soon. Stay tuned!');
             setFormData({
                 team_name: '', college: '', leader_name: '',
                 email: '', phone: '', member2: '', member3: '', member4: ''
